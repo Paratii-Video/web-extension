@@ -1,0 +1,26 @@
+{  
+    "manifest_version": 2,
+    "name": "Paratii",
+    "description": "Paratii helper extension, WIP",
+    "version": "0.2",
+    "background": {
+		"scripts": ["jquery-3.2.0.min.js", "background.js"]
+	},
+    "icons": {  
+        "48": "icon-48x48.png",
+        "96": "icon-96x96.png"
+    },
+    "browser_action": {  
+        "default_icon": {  
+            "16": "icon-16x16.png",
+            "32": "icon-32x32.png"
+        },
+        "default_title": "Upload a video to Paratii"
+    },
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"js": ["jquery-3.2.0.min.js", "paratii_injected.js"]
+		}
+	]
+}
