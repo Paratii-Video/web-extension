@@ -1,26 +1,49 @@
-{  
-    "manifest_version": 2,
-    "name": "Paratii",
-    "description": "Paratii helper extension, WIP",
-    "version": "0.2",
-    "background": {
-		"scripts": ["jquery-3.2.0.min.js", "background.js"]
+{
+  "manifest_version": 2,
+  "name": "Paratii",
+  "description": "Paratii helper extension, WIP",
+  "version": "0.0.2",
+  "author": "https://paratii.video",
+  "background": {
+    "scripts": ["build/js/background.bundled.js"]
 	},
-    "icons": {  
-        "48": "icon-48x48.png",
-        "96": "icon-96x96.png"
-    },
-    "browser_action": {  
-        "default_icon": {  
-            "16": "icon-16x16.png",
-            "32": "icon-32x32.png"
-        },
-        "default_title": "Upload a video to Paratii"
-    },
-	"content_scripts": [
-		{
-			"matches": ["<all_urls>"],
-			"js": ["jquery-3.2.0.min.js", "paratii_injected.js"]
-		}
-	]
+  "icons": {
+    "48": "src/images/icon-48x48.png",
+    "96": "src/images/icon-96x96.png"
+  },
+  "default_locale": "en",
+  "browser_action": {
+      "default_icon": {
+          "16": "src/images/icon-16x16.png",
+          "32": "src/images/icon-32x32.png"
+      },
+      "default_title": "Paratii",
+      "default_popup": "src/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "file://*/*",
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "src/js/contentscript.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "permissions": [
+    "storage",
+    "clipboardWrite",
+    "http://localhost:8545/"
+  ],
+  "externally_connectable": {
+    "matches": [
+      "https://paratii.video/*",
+      "https://star.paratii.video/*",
+      "https://gateway.paratii.video/*"
+    ]
+  }
 }
