@@ -35,6 +35,7 @@
     "bootstrap": "^3.3.7",
     "ipfs": "github:ya7ya/js-ipfs#paratii/master",
     "jquery": "^3.2.1",
+    "node-sass": "^4.5.3",
     "popper.js": "^1.12.6"
   }
 }

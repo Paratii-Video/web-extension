@@ -18,21 +18,51 @@ const node = new IPFS({
     }
 })
 
-const testFileID = 'QmRTxuZ8Uwp84g6TTNXupCPW6G3MHQQyHwqGqetU9Bhdhy'
+let nodeReady = false
 
 node.on('ready', () => {
     console.log('IPFS node is ready')
-    console.log('IPFS cat before')
-    node.files.cat(testFileID, (err, stream) => {
-        if (err) { return cb(err) }
-        let data = ''
-        stream.on('data', (chunk) => {
-            data += chunk
-        })
-        stream.on('end', () => {
-            console.log('IPFS cat success')
-            console.log(data)
-            console.log(testFileID)
-        })
-    })
+    nodeReady = true
+})
+
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+	if(request.payload) {
+		if(request.payload.action == 'paratii.start') {
+			if(!nodeReady) {
+				sendResponse({
+					response: 'paratii.error.ipfsnotready'
+				})
+			} else {
+				let uri = request.payload.uri
+				console.log(uri)
+				node.files.cat(uri, (stream) => {
+					stream.on('data', (data) => {
+						console.log('Received data packet')
+						console.log(data)
+						chrome.tabs.query({
+							active: true
+						}, (tabs) => {
+							tabs.forEach((tab) => {
+								chrome.tabs.sendMessage(tab, {
+									type: 'PARATII_DATA',
+									requestID: uri,
+									data: data
+								}, (response) => {
+									console.log('Received response to data packet...')
+									console.log(response)
+									onDataResponseHandler(response)
+								})
+							})
+						})
+					})
+					sendResponse({
+						response: 'paratii.success.ok'
+					})
+				})
+				sendResponse({
+					response: 'paratii.papoy.papoy'
+				})
+			}
+		}
+	}
 })
