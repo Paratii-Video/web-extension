@@ -46179,39 +46179,35 @@ module.exports = function (onPause) {
 console.log('[PARATII] background.js')
 
 const IPFS = __webpack_require__(288)
-const node = new IPFS({
-    bitswap: {
-        maxMessageSize: 32 * 1024
-    },
-    repo: 'paratii-' + String(Math.random() + Date.now()).replace(/\./g, ''),
-    config: {
-        Swarm: [
-            '/dns4/star.paratii.video/wss/p2p-webrtc-star'
-        ],
-        Bootstrap: [
-            '/dns4/bootstrap.paratii.video/tcp/443/wss/ipfs/QmeUmy6UtuEs91TH6bKnfuU1Yvp63CkZJWm624MjBEBazW',
-        ]
-    }
-})
 
-let nodeReady = false
-
-node.on('ready', () => {
-    console.log('IPFS node is ready')
-    nodeReady = true
-})
+window.nodes = []
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 	if(request.payload) {
 		if(request.payload.action == 'paratii.start') {
-			if(!nodeReady) {
-				sendResponse({
-					response: 'paratii.error.ipfsnotready'
-				})
-			} else {
+			const node = new IPFS({
+				bitswap: {
+					maxMessageSize: 32 * 1024
+				},
+				repo: 'paratii-' + String(Math.random() + Date.now()).replace(/\./g, ''),
+				/*config: {
+					Swarm: [
+						'/dns4/star.paratii.video/wss/p2p-webrtc-star'
+					],
+					Bootstrap: [
+						'/dns4/bootstrap.paratii.video/tcp/443/wss/ipfs/QmeUmy6UtuEs91TH6bKnfuU1Yvp63CkZJWm624MjBEBazW',
+					]
+				}*/
+			})
+			window.nodes.push(node)
+			node.on('ready', () => {
+				console.log('IPFS node is ready')
 				let uri = request.payload.uri
 				console.log(uri)
-				node.files.cat(uri, (stream) => {
+				node.files.cat(uri, (err, stream) => {
+					if(err) {
+						console.log('IPFS cat error')
+					}
 					stream.on('data', (data) => {
 						console.log('Received data packet')
 						console.log(data)
@@ -46238,7 +46234,14 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 				sendResponse({
 					response: 'paratii.papoy.papoy'
 				})
-			}
+			})
+		}
+		if(request.payload.action == 'paratii.stop') {
+			console.log('IPFS need to stop')
+			$.each(window.nodes, function(i, node) {
+				node.stop()
+				console.log('IPFS stopped')
+			});
 		}
 	}
 })
