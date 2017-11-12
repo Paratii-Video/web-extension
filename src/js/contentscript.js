@@ -3,22 +3,55 @@
 
 console.log('[PARATII] content script Loaded')
 
-const $ = require('jquery')
+// const $ = require('jquery')
 
 // Gecko fix
 // if (typeof chrome === 'undefined') {
 //   chrome = browser
 // }
 
-let playerBase = 'http://localhost/paratii/player.html'
+// let playerBase = 'http://localhost/paratii/player.html'
+//
+// $(() => {
+//   if ($('.paratii-player').length) {
+//     $('.paratii-player').each((i, el) => {
+//       let uri = $(el).attr('data-uri')
+//       $(el).html('<iframe src="' + playerBase + '#' + encodeURIComponent(uri) + '" width="854" height="480" allowscriptaccess allowtransparency allowfullscreen scrolling="no" frameborder="0"></iframe>')
+//     })
+//   }
+// })
 
-$(() => {
-  if ($('.paratii-player').length) {
-    $('.paratii-player').each((i, el) => {
-      let uri = $(el).attr('data-uri')
-      $(el).html('<iframe src="' + playerBase + '#' + encodeURIComponent(uri) + '" width="854" height="480" allowscriptaccess allowtransparency allowfullscreen scrolling="no" frameborder="0"></iframe>')
-    })
+function detectPlayers (selector) {
+  let players = document.querySelectorAll(selector)
+  for (let i = 0; i < players.length; i++) {
+    let player = players[i]
+    console.log('player: ', player)
+    let uri = player.dataset['uri']
+    if (uri) {
+      player.innerHTML = '<iframe src="' + uri + '" width="854" height="480" allowscriptaccess allowtransparency allowfullscreen scrolling="no" frameborder="0"></iframe>'
+    }
   }
+}
+
+detectPlayers('.paratii-player')
+
+// Testing msg passing between contentscript => background.js
+chrome.runtime.sendMessage({
+  payload: {
+    action: 'paratii.start',
+    uri: 'test URL'
+  }
+}, (response) => {
+  console.log('Received message from extension...')
+  console.log(response)
+  // window.postMessage({
+  //   type: 'PARATII_RESP',
+  //   payload: {
+  //     action: 'paratii.replyfromextension',
+  //     response: response,
+  //     verbatim: true
+  //   }
+  // }, '*')
 })
 
 window.addEventListener('message', (event) => {
