@@ -5,12 +5,12 @@ console.log('[PARATII] background.js')
 
 const IPFS = require('ipfs')
 const node = new IPFS({
-  /* bitswap: {
+  bitswap: {
     maxMessageSize: 32 * 1024
     // meterController: paratiiIPFS.meterController
-  }, */
-  repo: 'paratii-' + String(Math.random() + Date.now()).replace(/\./g, '')
-  /* config: {
+  },
+  repo: 'paratii-' + String(Math.random() + Date.now()).replace(/\./g, ''),
+  config: {
     Addresses: {
       Swarm: [
         '/dns4/star.paratii.video/wss/p2p-webrtc-star'
@@ -23,7 +23,7 @@ const node = new IPFS({
       // '/ip4/34.213.133.148/tcp/4003/ws/ipfs/QmeUmy6UtuEs91TH6bKnfuU1Yvp63CkZJWm624MjBEBazW',
       '/dns4/bootstrap.paratii.video/tcp/443/wss/ipfs/QmeUmy6UtuEs91TH6bKnfuU1Yvp63CkZJWm624MjBEBazW'
     ]
-  } */
+  }
 })
 
 node.on('ready', () => {
