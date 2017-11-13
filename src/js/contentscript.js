@@ -70,12 +70,12 @@ window.addEventListener('message', (event) => {
     let payload = event.data.payload
     if (payload.action === 'upload') {
       console.log('Supposed to send data to extension for uploading')
-      let arrayBufferForUploading = payload.buffer
-      console.log(arrayBufferForUploading)
+      let fileForUploading = payload.file
+      console.log(fileForUploading)
       chrome.runtime.sendMessage({
         payload: {
           action: 'paratii.upload',
-          buffer: arrayBufferForUploading
+          file: fileForUploading
         }
       }, (response) => {
         console.log('Received message from extension...')

@@ -4,6 +4,9 @@
 console.log('[PARATII] background.js')
 
 const IPFS = require('ipfs')
+const pull = require('pull-stream')
+const pullFileReader = require('pull-filereader')
+
 const node = new IPFS({
   bitswap: {
     maxMessageSize: 32 * 1024
@@ -55,14 +58,51 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     } else if (request.payload.action === 'paratii.upload') {
       console.log('Got msg with action upload')
       console.log(request.payload)
-      let buffer = request.payload.buffer
-      console.log('buffer should be', buffer)
-      let file = {
+      let file = request.payload.file
+      console.log('file should be', file)
+      /* let ipfsfile = {
         path: 'video.mp4',
-        content: buffer
-      }
-      console.log('file should be ', file)
-      node.files.add(file, (err, result) => { // Upload buffer to IPFS
+        content: file
+      } */
+      /* let updateProgress = (size) => {
+
+      } */
+      let files = [file]
+      pull(
+        pull.values(files),
+        pull.through((file) => {
+          console.log('Adding ', file)
+        }),
+        pull.asyncMap((file, cb) => pull(
+          pull.values([{
+            path: file.name,
+            content: pullFileReader(file)
+            /* content: pull(
+              pullFileReader(file),
+              pull.through((chunk) => updateProgress(chunk.length))
+            ) */
+          }]),
+          node.files.createAddPullStream({chunkerOptions: {maxChunkSize: 64048}}), // default size 262144
+          pull.collect((err, res) => {
+            if (err) {
+              return cb(err)
+            }
+            const file = res[0]
+            console.log('🍾 yay something happened')
+            console.log(file)
+          }))),
+       pull.collect((err, files) => {
+         if (err) {
+           throw err
+         }
+         if (files && files.length) {
+           console.log('apparently all done')
+           console.log(files)
+         }
+       })
+     )
+      // console.log('ipfs file should be ', ipfsfile)
+      /* node.files.add(ipfsfile, (err, result) => { // Upload buffer to IPFS
         if (err) {
           console.error(err)
           return
@@ -83,7 +123,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         let url = 'https://ipfs.io/ipfs/' + hash
         console.log('ipfs.io URL is ', url)
         console.log('🍾🍾🍾')
-      })
+      }) */
     }
   }
 })

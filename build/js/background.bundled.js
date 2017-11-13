@@ -79,8 +79,8 @@
 
 
 var base64 = __webpack_require__(285)
-var ieee754 = __webpack_require__(152)
-var isArray = __webpack_require__(153)
+var ieee754 = __webpack_require__(153)
+var isArray = __webpack_require__(154)
 
 exports.Buffer = Buffer
 exports.SlowBuffer = SlowBuffer
@@ -2185,7 +2185,7 @@ var sources  = __webpack_require__(298)
 var sinks    = __webpack_require__(304)
 var throughs = __webpack_require__(310)
 
-exports = module.exports = __webpack_require__(163)
+exports = module.exports = __webpack_require__(107)
 
 exports.pull = exports
 
@@ -2233,7 +2233,7 @@ exports.default = function (tasks, callback) {
     nextTask([]);
 };
 
-var _isArray = __webpack_require__(108);
+var _isArray = __webpack_require__(109);
 
 var _isArray2 = _interopRequireDefault(_isArray);
 
@@ -2241,7 +2241,7 @@ var _noop = __webpack_require__(26);
 
 var _noop2 = _interopRequireDefault(_noop);
 
-var _once = __webpack_require__(109);
+var _once = __webpack_require__(110);
 
 var _once2 = _interopRequireDefault(_once);
 
@@ -2330,7 +2330,7 @@ const mh = __webpack_require__(19)
 const multibase = __webpack_require__(292)
 const multicodec = __webpack_require__(297)
 const codecs = __webpack_require__(73)
-const codecVarints = __webpack_require__(156)
+const codecVarints = __webpack_require__(157)
 const multihash = __webpack_require__(19)
 
 /**
@@ -2598,7 +2598,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _setImmediate = __webpack_require__(107);
+var _setImmediate = __webpack_require__(108);
 
 var _setImmediate2 = _interopRequireDefault(_setImmediate);
 
@@ -7134,7 +7134,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = eachLimit;
 
-var _eachOf = __webpack_require__(114);
+var _eachOf = __webpack_require__(115);
 
 var _eachOf2 = _interopRequireDefault(_eachOf);
 
@@ -7220,7 +7220,7 @@ module.exports = exports['default'];
 
 const Key = __webpack_require__(176)
 const MemoryDatastore = __webpack_require__(348)
-const utils = __webpack_require__(116)
+const utils = __webpack_require__(117)
 
 exports.Key = Key
 exports.MemoryDatastore = MemoryDatastore
@@ -7516,7 +7516,7 @@ if (false) {
 
 const bs58 = __webpack_require__(72)
 
-const cs = __webpack_require__(155)
+const cs = __webpack_require__(156)
 
 exports.names = cs.names
 exports.codes = cs.codes
@@ -8195,10 +8195,10 @@ function toB64Opt (val) {
 "use strict";
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 
-const map = __webpack_require__(135)
+const map = __webpack_require__(136)
 const extend = __webpack_require__(36)
 const codec = __webpack_require__(551)
-const protocols = __webpack_require__(136)
+const protocols = __webpack_require__(137)
 const varint = __webpack_require__(11)
 const bs58 = __webpack_require__(72)
 
@@ -10150,7 +10150,7 @@ function extend() {
 exports = module.exports = __webpack_require__(187);
 exports.Stream = exports;
 exports.Readable = exports;
-exports.Writable = __webpack_require__(120);
+exports.Writable = __webpack_require__(121);
 exports.Duplex = __webpack_require__(42);
 exports.Transform = __webpack_require__(190);
 exports.PassThrough = __webpack_require__(384);
@@ -10253,7 +10253,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = parallelLimit;
 
-var _eachOf = __webpack_require__(114);
+var _eachOf = __webpack_require__(115);
 
 var _eachOf2 = _interopRequireDefault(_eachOf);
 
@@ -10623,7 +10623,7 @@ util.inherits = __webpack_require__(1);
 /*</replacement>*/
 
 var Readable = __webpack_require__(187);
-var Writable = __webpack_require__(120);
+var Writable = __webpack_require__(121);
 
 util.inherits(Duplex, Readable);
 
@@ -11310,7 +11310,7 @@ function forEach (xs, f) {
 "use strict";
 
 
-exports.DAGNode = __webpack_require__(122)
+exports.DAGNode = __webpack_require__(123)
 exports.DAGLink = __webpack_require__(51)
 
 /*
@@ -11318,7 +11318,7 @@ exports.DAGLink = __webpack_require__(51)
  * https://github.com/ipld/interface-ipld-format
  */
 exports.resolver = __webpack_require__(431)
-exports.util = __webpack_require__(123)
+exports.util = __webpack_require__(124)
 
 
 /***/ }),
@@ -12379,7 +12379,7 @@ exports.decodePayloadAsBinary = function (data, binaryType, callback) {
 
 var Reader = __webpack_require__(255)
 var Writer = __webpack_require__(29)
-var cat = __webpack_require__(145)
+var cat = __webpack_require__(146)
 var pair = __webpack_require__(99)
 
 function once (cb) {
@@ -13340,7 +13340,7 @@ var _initialParams = __webpack_require__(165);
 
 var _initialParams2 = _interopRequireDefault(_initialParams);
 
-var _setImmediate = __webpack_require__(107);
+var _setImmediate = __webpack_require__(108);
 
 var _setImmediate2 = _interopRequireDefault(_setImmediate);
 
@@ -13660,7 +13660,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = doParallel;
 
-var _eachOf = __webpack_require__(114);
+var _eachOf = __webpack_require__(115);
 
 var _eachOf2 = _interopRequireDefault(_eachOf);
 
@@ -13776,11 +13776,11 @@ exports.duplex = __webpack_require__(200)
 
 const multihashing = __webpack_require__(17)
 const sort = __webpack_require__(415)
-const dagPBUtil = __webpack_require__(123)
+const dagPBUtil = __webpack_require__(124)
 const serialize = dagPBUtil.serialize
 const dagNodeUtil = __webpack_require__(83)
 const linkSort = dagNodeUtil.linkSort
-const DAGNode = __webpack_require__(122)
+const DAGNode = __webpack_require__(123)
 const DAGLink = __webpack_require__(51)
 
 function create (data, dagLinks, hashAlg, callback) {
@@ -16728,7 +16728,7 @@ exports.PARENT = {
 
 
 const SmartBuffer = __webpack_require__(87).SmartBuffer
-const multihashes = __webpack_require__(155)
+const multihashes = __webpack_require__(156)
 const multicodecs = __webpack_require__(73)
 const multihash = __webpack_require__(19)
 const CID = __webpack_require__(7)
@@ -19057,7 +19057,7 @@ const isEqualWith = __webpack_require__(565)
 const assert = __webpack_require__(9)
 const each = __webpack_require__(15)
 const CID = __webpack_require__(7)
-const codecName = __webpack_require__(158)
+const codecName = __webpack_require__(159)
 const vd = __webpack_require__(566)
 const multihashing = __webpack_require__(17)
 
@@ -19357,7 +19357,7 @@ var _eachLimit = __webpack_require__(577);
 
 var _eachLimit2 = _interopRequireDefault(_eachLimit);
 
-var _doLimit = __webpack_require__(113);
+var _doLimit = __webpack_require__(114);
 
 var _doLimit2 = _interopRequireDefault(_doLimit);
 
@@ -19868,7 +19868,7 @@ module.exports = function () {
 "use strict";
 
 
-const multistream = __webpack_require__(147)
+const multistream = __webpack_require__(148)
 
 module.exports = function protocolMuxer (protocols, conn) {
   const ms = new multistream.Listener()
@@ -20138,7 +20138,7 @@ module.exports = function (writer, ender) {
 
 "use strict";
 
-var abortCb = __webpack_require__(159)
+var abortCb = __webpack_require__(160)
 
 module.exports = function values (array, onAbort) {
   if(!array)
@@ -20198,7 +20198,7 @@ module.exports = function reduce (reducer, acc, cb ) {
 "use strict";
 
 
-var tester = __webpack_require__(161)
+var tester = __webpack_require__(162)
 
 module.exports = function filter (test) {
   //regexp
@@ -20224,6 +20224,62 @@ module.exports = function filter (test) {
 
 /***/ }),
 /* 107 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function pull (a) {
+  var length = arguments.length
+  if (typeof a === 'function' && a.length === 1) {
+    var args = new Array(length)
+    for(var i = 0; i < length; i++)
+      args[i] = arguments[i]
+    return function (read) {
+      if (args == null) {
+        throw new TypeError("partial sink should only be called once!")
+      }
+
+      // Grab the reference after the check, because it's always an array now
+      // (engines like that kind of consistency).
+      var ref = args
+      args = null
+
+      // Prioritize common case of small number of pulls.
+      switch (length) {
+      case 1: return pull(read, ref[0])
+      case 2: return pull(read, ref[0], ref[1])
+      case 3: return pull(read, ref[0], ref[1], ref[2])
+      case 4: return pull(read, ref[0], ref[1], ref[2], ref[3])
+      default:
+        ref.unshift(read)
+        return pull.apply(null, ref)
+      }
+    }
+  }
+
+  var read = a
+
+  if (read && typeof read.source === 'function') {
+    read = read.source
+  }
+
+  for (var i = 1; i < length; i++) {
+    var s = arguments[i]
+    if (typeof s === 'function') {
+      read = s(read)
+    } else if (s && typeof s === 'object') {
+      s.sink(read)
+      read = s.source
+    }
+  }
+
+  return read
+}
+
+
+/***/ }),
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20272,7 +20328,7 @@ exports.default = wrap(_defer);
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(33).setImmediate, __webpack_require__(3)))
 
 /***/ }),
-/* 108 */
+/* 109 */
 /***/ (function(module, exports) {
 
 /**
@@ -20304,7 +20360,7 @@ module.exports = isArray;
 
 
 /***/ }),
-/* 109 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20325,7 +20381,7 @@ function once(fn) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 110 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Symbol = __webpack_require__(168),
@@ -20359,7 +20415,7 @@ module.exports = baseGetTag;
 
 
 /***/ }),
-/* 111 */
+/* 112 */
 /***/ (function(module, exports) {
 
 /**
@@ -20394,7 +20450,7 @@ module.exports = isObjectLike;
 
 
 /***/ }),
-/* 112 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20409,7 +20465,7 @@ exports.default = {};
 module.exports = exports["default"];
 
 /***/ }),
-/* 113 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20427,7 +20483,7 @@ function doLimit(fn, limit) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 114 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20446,7 +20502,7 @@ var _isArrayLike = __webpack_require__(63);
 
 var _isArrayLike2 = _interopRequireDefault(_isArrayLike);
 
-var _breakLoop = __webpack_require__(112);
+var _breakLoop = __webpack_require__(113);
 
 var _breakLoop2 = _interopRequireDefault(_breakLoop);
 
@@ -20454,7 +20510,7 @@ var _eachOfLimit = __webpack_require__(173);
 
 var _eachOfLimit2 = _interopRequireDefault(_eachOfLimit);
 
-var _doLimit = __webpack_require__(113);
+var _doLimit = __webpack_require__(114);
 
 var _doLimit2 = _interopRequireDefault(_doLimit);
 
@@ -20462,7 +20518,7 @@ var _noop = __webpack_require__(26);
 
 var _noop2 = _interopRequireDefault(_noop);
 
-var _once = __webpack_require__(109);
+var _once = __webpack_require__(110);
 
 var _once2 = _interopRequireDefault(_once);
 
@@ -20544,7 +20600,7 @@ var eachOfGeneric = (0, _doLimit2.default)(_eachOfLimit2.default, Infinity);
 module.exports = exports['default'];
 
 /***/ }),
-/* 115 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process) {/**
@@ -20736,7 +20792,7 @@ function localstorage() {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 116 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20745,7 +20801,7 @@ function localstorage() {
 const pull = __webpack_require__(5)
 const Source = __webpack_require__(75)
 const path = __webpack_require__(41)
-const os = __webpack_require__(117)
+const os = __webpack_require__(118)
 const uuid = __webpack_require__(177)
 
 exports.asyncFilter = function (test) {
@@ -20822,7 +20878,7 @@ exports.tmpdir = () => {
 
 
 /***/ }),
-/* 117 */
+/* 118 */
 /***/ (function(module, exports) {
 
 exports.endianness = function () { return 'LE' };
@@ -20873,7 +20929,7 @@ exports.EOL = '\n';
 
 
 /***/ }),
-/* 118 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21009,7 +21065,7 @@ module.exports = exports['default'];
  */
 
 /***/ }),
-/* 119 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21181,7 +21237,7 @@ module.exports = LevelDatastore
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 120 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21852,7 +21908,7 @@ Writable.prototype._destroy = function (err, cb) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3), __webpack_require__(33).setImmediate, __webpack_require__(4)))
 
 /***/ }),
-/* 121 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer, process) {module.exports = Level
@@ -22157,7 +22213,7 @@ Level.destroy = function(db, callback) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer, __webpack_require__(3)))
 
 /***/ }),
-/* 122 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22249,7 +22305,7 @@ exports.rmLink = __webpack_require__(430)
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 123 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22259,7 +22315,7 @@ const CID = __webpack_require__(7)
 const protons = __webpack_require__(32)
 const proto = protons(__webpack_require__(426))
 const DAGLink = __webpack_require__(51)
-const DAGNode = __webpack_require__(122)
+const DAGNode = __webpack_require__(123)
 
 exports = module.exports
 
@@ -22326,7 +22382,7 @@ exports.cid = cid
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 124 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22338,7 +22394,7 @@ exports.defined = function (val) {
 
 
 /***/ }),
-/* 125 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22519,7 +22575,7 @@ exports.nextPowerOf2 = (n) => {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 126 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23258,7 +23314,7 @@ Url.prototype.parseHost = function() {
 
 
 /***/ }),
-/* 127 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23267,13 +23323,13 @@ module.exports = __webpack_require__(215)(__webpack_require__(455))
 
 
 /***/ }),
-/* 128 */
+/* 129 */
 /***/ (function(module, exports) {
 
 module.exports = {"COMPRESSED_TYPE_INVALID":"compressed should be a boolean","EC_PRIVATE_KEY_TYPE_INVALID":"private key should be a Buffer","EC_PRIVATE_KEY_LENGTH_INVALID":"private key length is invalid","EC_PRIVATE_KEY_TWEAK_ADD_FAIL":"tweak out of range or resulting private key is invalid","EC_PRIVATE_KEY_TWEAK_MUL_FAIL":"tweak out of range","EC_PRIVATE_KEY_EXPORT_DER_FAIL":"couldn't export to DER format","EC_PRIVATE_KEY_IMPORT_DER_FAIL":"couldn't import from DER format","EC_PUBLIC_KEYS_TYPE_INVALID":"public keys should be an Array","EC_PUBLIC_KEYS_LENGTH_INVALID":"public keys Array should have at least 1 element","EC_PUBLIC_KEY_TYPE_INVALID":"public key should be a Buffer","EC_PUBLIC_KEY_LENGTH_INVALID":"public key length is invalid","EC_PUBLIC_KEY_PARSE_FAIL":"the public key could not be parsed or is invalid","EC_PUBLIC_KEY_CREATE_FAIL":"private was invalid, try again","EC_PUBLIC_KEY_TWEAK_ADD_FAIL":"tweak out of range or resulting public key is invalid","EC_PUBLIC_KEY_TWEAK_MUL_FAIL":"tweak out of range","EC_PUBLIC_KEY_COMBINE_FAIL":"the sum of the public keys is not valid","ECDH_FAIL":"scalar was invalid (zero or overflow)","ECDSA_SIGNATURE_TYPE_INVALID":"signature should be a Buffer","ECDSA_SIGNATURE_LENGTH_INVALID":"signature length is invalid","ECDSA_SIGNATURE_PARSE_FAIL":"couldn't parse signature","ECDSA_SIGNATURE_PARSE_DER_FAIL":"couldn't parse DER signature","ECDSA_SIGNATURE_SERIALIZE_DER_FAIL":"couldn't serialize signature to DER format","ECDSA_SIGN_FAIL":"nonce generation function failed or private key is invalid","ECDSA_RECOVER_FAIL":"couldn't recover public key from signature","MSG32_TYPE_INVALID":"message should be a Buffer","MSG32_LENGTH_INVALID":"message length is invalid","OPTIONS_TYPE_INVALID":"options should be an Object","OPTIONS_DATA_TYPE_INVALID":"options.data should be a Buffer","OPTIONS_DATA_LENGTH_INVALID":"options.data length is invalid","OPTIONS_NONCEFN_TYPE_INVALID":"options.noncefn should be a Function","RECOVERY_ID_TYPE_INVALID":"recovery should be a Number","RECOVERY_ID_VALUE_INVALID":"recovery should have value between -1 and 4","TWEAK_TYPE_INVALID":"tweak should be a Buffer","TWEAK_LENGTH_INVALID":"tweak length is invalid"}
 
 /***/ }),
-/* 129 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var hash = exports;
@@ -23294,7 +23350,7 @@ hash.ripemd160 = hash.ripemd.ripemd160;
 
 
 /***/ }),
-/* 130 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23410,7 +23466,7 @@ function nibbleToPath (data) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 131 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23428,7 +23484,7 @@ module.exports = function nodeify (promise, cb) {
 
 
 /***/ }),
-/* 132 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23451,7 +23507,7 @@ module.exports = () => {
 
 
 /***/ }),
-/* 133 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23472,7 +23528,7 @@ message PrivateKey {
 }`
 
 /***/ }),
-/* 134 */
+/* 135 */
 /***/ (function(module, exports) {
 
 
@@ -23487,7 +23543,7 @@ module.exports = function(arr, obj){
 };
 
 /***/ }),
-/* 135 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {/**
@@ -25860,13 +25916,13 @@ module.exports = map;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(20)(module)))
 
 /***/ }),
-/* 136 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const map = __webpack_require__(135)
+const map = __webpack_require__(136)
 
 function Protocols (proto) {
   if (typeof (proto) === 'number') {
@@ -25938,7 +25994,7 @@ module.exports = Protocols
 
 
 /***/ }),
-/* 137 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25958,7 +26014,7 @@ module.exports = {
 
 
 /***/ }),
-/* 138 */
+/* 139 */
 /***/ (function(module, exports) {
 
 /**
@@ -26431,7 +26487,7 @@ module.exports = values;
 
 
 /***/ }),
-/* 139 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -26837,7 +26893,7 @@ function error() {
 
 
 /***/ }),
-/* 140 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {// browser shim for xmlhttprequest module
@@ -26881,7 +26937,7 @@ module.exports = function (opts) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ }),
-/* 141 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -27044,10 +27100,10 @@ Transport.prototype.onClose = function () {
 
 
 /***/ }),
-/* 142 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(process) {var pull = __webpack_require__(163)
+/* WEBPACK VAR INJECTION */(function(process) {var pull = __webpack_require__(107)
 var looper = __webpack_require__(269)
 
 function destroy(stream, cb) {
@@ -27288,7 +27344,7 @@ exports.transform = function (stream) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 143 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27431,7 +27487,7 @@ exports.read = function read (reader, cb) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 144 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27448,7 +27504,7 @@ log.error = debug('libp2p:secio:error')
 
 const pbm = protons(__webpack_require__(671))
 
-const support = __webpack_require__(143)
+const support = __webpack_require__(144)
 
 // nonceSize is the size of our nonces (in bytes)
 const nonceSize = 16
@@ -27637,7 +27693,7 @@ exports.verifyNonce = (state, n2) => {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 145 */
+/* 146 */
 /***/ (function(module, exports) {
 
 var noop = function () {}
@@ -27684,7 +27740,7 @@ module.exports = function (streams) {
 
 
 /***/ }),
-/* 146 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27697,7 +27753,7 @@ module.exports = {
 
 
 /***/ }),
-/* 147 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27710,7 +27766,7 @@ exports.matchExact = __webpack_require__(276)
 
 
 /***/ }),
-/* 148 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27720,7 +27776,7 @@ exports.OFFLINE_ERROR = new Error('This command must be run in online mode. Try 
 
 
 /***/ }),
-/* 149 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27759,7 +27815,7 @@ module.exports = function block (_maxLength) {
 
 
 /***/ }),
-/* 150 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27774,7 +27830,7 @@ module.exports = class Dir {
 
 
 /***/ }),
-/* 151 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var looper = __webpack_require__(733)
@@ -27848,7 +27904,7 @@ module.exports = function (map, width, inOrder) {
 
 
 /***/ }),
-/* 152 */
+/* 153 */
 /***/ (function(module, exports) {
 
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
@@ -27938,7 +27994,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 
 
 /***/ }),
-/* 153 */
+/* 154 */
 /***/ (function(module, exports) {
 
 var toString = {}.toString;
@@ -27949,7 +28005,7 @@ module.exports = Array.isArray || function (arr) {
 
 
 /***/ }),
-/* 154 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28065,7 +28121,7 @@ module.exports = BlockService
 
 
 /***/ }),
-/* 155 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29093,13 +29149,13 @@ exports.defaultLengths = Object.freeze({
 
 
 /***/ }),
-/* 156 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 const baseTable = __webpack_require__(73)
-const varintBufferEncode = __webpack_require__(157).varintBufferEncode
+const varintBufferEncode = __webpack_require__(158).varintBufferEncode
 
 // this creates a map for codecName -> codeVarintBuffer
 
@@ -29113,7 +29169,7 @@ for (let encodingName in baseTable) {
 
 
 /***/ }),
-/* 157 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29150,7 +29206,7 @@ function varintBufferDecode (input) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0).Buffer))
 
 /***/ }),
-/* 158 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29169,7 +29225,7 @@ for (let encodingName in baseTable) {
 
 
 /***/ }),
-/* 159 */
+/* 160 */
 /***/ (function(module, exports) {
 
 module.exports = function abortCb(cb, abort, onAbort) {
@@ -29181,12 +29237,12 @@ module.exports = function abortCb(cb, abort, onAbort) {
 
 
 /***/ }),
-/* 160 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var abortCb = __webpack_require__(159)
+var abortCb = __webpack_require__(160)
 
 module.exports = function once (value, onAbort) {
   return function (abort, cb) {
@@ -29204,7 +29260,7 @@ module.exports = function once (value, onAbort) {
 
 
 /***/ }),
-/* 161 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var prop = __webpack_require__(62)
@@ -29221,7 +29277,7 @@ module.exports = function tester (test) {
 
 
 /***/ }),
-/* 162 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29243,62 +29299,6 @@ module.exports = function unique (field, invert) {
   })
 }
 
-
-
-/***/ }),
-/* 163 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function pull (a) {
-  var length = arguments.length
-  if (typeof a === 'function' && a.length === 1) {
-    var args = new Array(length)
-    for(var i = 0; i < length; i++)
-      args[i] = arguments[i]
-    return function (read) {
-      if (args == null) {
-        throw new TypeError("partial sink should only be called once!")
-      }
-
-      // Grab the reference after the check, because it's always an array now
-      // (engines like that kind of consistency).
-      var ref = args
-      args = null
-
-      // Prioritize common case of small number of pulls.
-      switch (length) {
-      case 1: return pull(read, ref[0])
-      case 2: return pull(read, ref[0], ref[1])
-      case 3: return pull(read, ref[0], ref[1], ref[2])
-      case 4: return pull(read, ref[0], ref[1], ref[2], ref[3])
-      default:
-        ref.unshift(read)
-        return pull.apply(null, ref)
-      }
-    }
-  }
-
-  var read = a
-
-  if (read && typeof read.source === 'function') {
-    read = read.source
-  }
-
-  for (var i = 1; i < length; i++) {
-    var s = arguments[i]
-    if (typeof s === 'function') {
-      read = s(read)
-    } else if (s && typeof s === 'object') {
-      s.sink(read)
-      read = s.source
-    }
-  }
-
-  return read
-}
 
 
 /***/ }),
@@ -29378,7 +29378,7 @@ const parallel = __webpack_require__(40)
 const each = __webpack_require__(15)
 const assert = __webpack_require__(9)
 const path = __webpack_require__(41)
-const debug = __webpack_require__(115)
+const debug = __webpack_require__(116)
 
 const backends = __webpack_require__(344)
 const version = __webpack_require__(345)
@@ -29743,7 +29743,7 @@ var _eachOfLimit = __webpack_require__(173);
 
 var _eachOfLimit2 = _interopRequireDefault(_eachOfLimit);
 
-var _doLimit = __webpack_require__(113);
+var _doLimit = __webpack_require__(114);
 
 var _doLimit2 = _interopRequireDefault(_doLimit);
 
@@ -29832,7 +29832,7 @@ var _noop = __webpack_require__(26);
 
 var _noop2 = _interopRequireDefault(_noop);
 
-var _once = __webpack_require__(109);
+var _once = __webpack_require__(110);
 
 var _once2 = _interopRequireDefault(_once);
 
@@ -29844,7 +29844,7 @@ var _onlyOnce = __webpack_require__(48);
 
 var _onlyOnce2 = _interopRequireDefault(_onlyOnce);
 
-var _breakLoop = __webpack_require__(112);
+var _breakLoop = __webpack_require__(113);
 
 var _breakLoop2 = _interopRequireDefault(_breakLoop);
 
@@ -32963,7 +32963,7 @@ var processNextTick = __webpack_require__(79);
 module.exports = Readable;
 
 /*<replacement>*/
-var isArray = __webpack_require__(153);
+var isArray = __webpack_require__(154);
 /*</replacement>*/
 
 /*<replacement>*/
@@ -35423,7 +35423,7 @@ module.exports = AbstractChainedBatch
 "use strict";
 
 
-const debug = __webpack_require__(115)
+const debug = __webpack_require__(116)
 const setImmediate = __webpack_require__(8)
 
 const log = debug('repo:lock')
@@ -35904,15 +35904,15 @@ exports.cid = (dagNode, callback) => {
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global, Buffer) {
 
-const ieee754 = __webpack_require__(152)
+const ieee754 = __webpack_require__(153)
 const Bignumber = __webpack_require__(84)
 
 const parser = __webpack_require__(435)
-const utils = __webpack_require__(125)
+const utils = __webpack_require__(126)
 const c = __webpack_require__(85)
 const Simple = __webpack_require__(207)
 const Tagged = __webpack_require__(208)
-const url = __webpack_require__(126)
+const url = __webpack_require__(127)
 
 /**
  * Transform binary cbor data into JavaScript objects.
@@ -37518,7 +37518,7 @@ function mapFromEthObj (account, options, callback) {
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {const SHA3 = __webpack_require__(449)
-const secp256k1 = __webpack_require__(127)
+const secp256k1 = __webpack_require__(128)
 const assert = __webpack_require__(9)
 const rlp = __webpack_require__(45)
 const BN = __webpack_require__(14)
@@ -38229,7 +38229,7 @@ exports.defineProperties = function (self, fields, data) {
 
 var assert = __webpack_require__(452)
 var der = __webpack_require__(453)
-var messages = __webpack_require__(128)
+var messages = __webpack_require__(129)
 
 function initCompressedValue (value, defaultValue) {
   if (value === undefined) return defaultValue
@@ -40662,9 +40662,9 @@ function mapFromEthObj (tx, options, callback) {
 "use strict";
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 
-const nodeify = __webpack_require__(131)
+const nodeify = __webpack_require__(132)
 
-const crypto = __webpack_require__(132)()
+const crypto = __webpack_require__(133)()
 const lengths = __webpack_require__(507)
 
 const hashTypes = {
@@ -41003,9 +41003,9 @@ module.exports = EVP_BytesToKey
 "use strict";
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 
-const nodeify = __webpack_require__(131)
+const nodeify = __webpack_require__(132)
 
-const webcrypto = __webpack_require__(132)()
+const webcrypto = __webpack_require__(133)()
 
 exports.utils = __webpack_require__(524)
 
@@ -44054,11 +44054,11 @@ function isBuf(obj) {
 var eio = __webpack_require__(631);
 var Socket = __webpack_require__(266);
 var Emitter = __webpack_require__(57);
-var parser = __webpack_require__(139);
+var parser = __webpack_require__(140);
 var on = __webpack_require__(267);
 var bind = __webpack_require__(268);
 var debug = __webpack_require__(95)('socket.io-client:manager');
-var indexOf = __webpack_require__(134);
+var indexOf = __webpack_require__(135);
 var Backoff = __webpack_require__(646);
 
 /**
@@ -44629,7 +44629,7 @@ Manager.prototype.onreconnect = function () {
  * Module dependencies
  */
 
-var XMLHttpRequest = __webpack_require__(140);
+var XMLHttpRequest = __webpack_require__(141);
 var XHR = __webpack_require__(634);
 var JSONP = __webpack_require__(642);
 var websocket = __webpack_require__(643);
@@ -44689,7 +44689,7 @@ function polling (opts) {
  * Module dependencies.
  */
 
-var Transport = __webpack_require__(141);
+var Transport = __webpack_require__(142);
 var parseqs = __webpack_require__(96);
 var parser = __webpack_require__(58);
 var inherit = __webpack_require__(97);
@@ -44707,7 +44707,7 @@ module.exports = Polling;
  */
 
 var hasXHR2 = (function () {
-  var XMLHttpRequest = __webpack_require__(140);
+  var XMLHttpRequest = __webpack_require__(141);
   var xhr = new XMLHttpRequest({ xdomain: false });
   return null != xhr.responseType;
 })();
@@ -45016,7 +45016,7 @@ module.exports = yeast;
  * Module dependencies.
  */
 
-var parser = __webpack_require__(139);
+var parser = __webpack_require__(140);
 var Emitter = __webpack_require__(57);
 var toArray = __webpack_require__(645);
 var on = __webpack_require__(267);
@@ -46017,7 +46017,7 @@ var _noop = __webpack_require__(26);
 
 var _noop2 = _interopRequireDefault(_noop);
 
-var _breakLoop = __webpack_require__(112);
+var _breakLoop = __webpack_require__(113);
 
 var _breakLoop2 = _interopRequireDefault(_breakLoop);
 
@@ -46239,6 +46239,9 @@ module.exports = function (onPause) {
 console.log('[PARATII] background.js')
 
 const IPFS = __webpack_require__(284)
+const pull = __webpack_require__(5)
+const pullFileReader = __webpack_require__(749)
+
 const node = new IPFS({
   bitswap: {
     maxMessageSize: 32 * 1024
@@ -46290,14 +46293,55 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     } else if (request.payload.action === 'paratii.upload') {
       console.log('Got msg with action upload')
       console.log(request.payload)
-      let buffer = request.payload.buffer
-      console.log('buffer should be', buffer)
-      let file = {
+      let file = request.payload.file
+      console.log('file should be', file)
+      /*let ipfsfile = {
         path: 'video.mp4',
-        content: buffer
+        content: file
+      }*/
+      let updateProgress = (size) => {
+        return
       }
-      console.log('file should be ', file)
-      node.files.add(file, (err, result) => { // Upload buffer to IPFS
+      let files = [file]
+      var fileSize = 0
+      var total = 0
+      pull(
+        pull.values(files),
+        pull.through((file) => {
+          console.log('Adding ', file)
+          fileSize = file.size
+          total = 0
+        }),
+        pull.asyncMap((file, cb) => pull(
+          pull.values([{
+            path: file.name,
+            content: pullFileReader(file)
+            /*content: pull(
+              pullFileReader(file),
+              pull.through((chunk) => updateProgress(chunk.length))
+            )*/
+          }]),
+          node.files.createAddPullStream({chunkerOptions: {maxChunkSize: 64048}}), // default size 262144
+          pull.collect((err, res) => {
+            if (err) {
+              return cb(err)
+            }
+            const file = res[0]
+            console.log('🍾 yay something happened')
+            console.log(file)
+        }))),
+       pull.collect((err, files) => {
+         if (err) {
+           throw err
+         }
+         if (files && files.length) {
+           console.log('apparently all done')
+           console.log(files)
+         }
+       })
+     )
+      //console.log('ipfs file should be ', ipfsfile)
+      /*node.files.add(ipfsfile, (err, result) => { // Upload buffer to IPFS
         if (err) {
           console.error(err)
           return
@@ -46318,7 +46362,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         let url = 'https://ipfs.io/ipfs/' + hash
         console.log('ipfs.io URL is ', url)
         console.log('🍾🍾🍾')
-      })
+      })*/
     }
   }
 })
@@ -46331,7 +46375,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 "use strict";
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 
-const BlockService = __webpack_require__(154)
+const BlockService = __webpack_require__(155)
 const IPLDResolver = __webpack_require__(286)
 const PeerId = __webpack_require__(23)
 const PeerInfo = __webpack_require__(39)
@@ -46585,7 +46629,7 @@ const pull = __webpack_require__(5)
 const CID = __webpack_require__(7)
 const doUntil = __webpack_require__(318)
 const IPFSRepo = __webpack_require__(166)
-const BlockService = __webpack_require__(154)
+const BlockService = __webpack_require__(155)
 const joinPath = __webpack_require__(41).join
 const pullDeferSource = __webpack_require__(81).source
 const pullTraverse = __webpack_require__(201)
@@ -47756,9 +47800,9 @@ module.exports = function base16 (alphabet) {
 
 
 const varint = __webpack_require__(11)
-const codecNameToCodeVarint = __webpack_require__(156)
-const codeToCodecName = __webpack_require__(158)
-const util = __webpack_require__(157)
+const codecNameToCodeVarint = __webpack_require__(157)
+const codeToCodecName = __webpack_require__(159)
+const util = __webpack_require__(158)
 
 exports = module.exports
 
@@ -47816,7 +47860,7 @@ exports.getCodec = (prefixedData) => {
 
 module.exports = {
   keys: __webpack_require__(299),
-  once: __webpack_require__(160),
+  once: __webpack_require__(161),
   values: __webpack_require__(104),
   count: __webpack_require__(300),
   infinite: __webpack_require__(301),
@@ -48036,7 +48080,7 @@ module.exports = {
   filterNot: __webpack_require__(313),
   through: __webpack_require__(314),
   take: __webpack_require__(315),
-  unique: __webpack_require__(162),
+  unique: __webpack_require__(163),
   nonUnique: __webpack_require__(316),
   flatten: __webpack_require__(317)
 }
@@ -48132,7 +48176,7 @@ module.exports = function asyncMap (map) {
 "use strict";
 
 
-var tester = __webpack_require__(161)
+var tester = __webpack_require__(162)
 var filter = __webpack_require__(106)
 
 module.exports = function filterNot (test) {
@@ -48226,7 +48270,7 @@ module.exports = function take (test, opts) {
 "use strict";
 
 
-var unique = __webpack_require__(162)
+var unique = __webpack_require__(163)
 
 //passes an item through when you see it for the second time.
 module.exports = function nonUnique (field) {
@@ -48242,7 +48286,7 @@ module.exports = function nonUnique (field) {
 
 
 var values = __webpack_require__(104)
-var once = __webpack_require__(160)
+var once = __webpack_require__(161)
 
 //convert a stream of arrays or streams into just a stream.
 module.exports = function flatten () {
@@ -48402,7 +48446,7 @@ module.exports = exports['default'];
 /* 320 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGetTag = __webpack_require__(110),
+var baseGetTag = __webpack_require__(111),
     isObject = __webpack_require__(164);
 
 /** `Object#toString` result references. */
@@ -48653,7 +48697,7 @@ module.exports = keys;
 
 var baseTimes = __webpack_require__(327),
     isArguments = __webpack_require__(328),
-    isArray = __webpack_require__(108),
+    isArray = __webpack_require__(109),
     isBuffer = __webpack_require__(330),
     isIndex = __webpack_require__(332),
     isTypedArray = __webpack_require__(333);
@@ -48733,7 +48777,7 @@ module.exports = baseTimes;
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseIsArguments = __webpack_require__(329),
-    isObjectLike = __webpack_require__(111);
+    isObjectLike = __webpack_require__(112);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -48774,8 +48818,8 @@ module.exports = isArguments;
 /* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGetTag = __webpack_require__(110),
-    isObjectLike = __webpack_require__(111);
+var baseGetTag = __webpack_require__(111),
+    isObjectLike = __webpack_require__(112);
 
 /** `Object#toString` result references. */
 var argsTag = '[object Arguments]';
@@ -48928,9 +48972,9 @@ module.exports = isTypedArray;
 /* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGetTag = __webpack_require__(110),
+var baseGetTag = __webpack_require__(111),
     isLength = __webpack_require__(171),
-    isObjectLike = __webpack_require__(111);
+    isObjectLike = __webpack_require__(112);
 
 /** `Object#toString` result references. */
 var argsTag = '[object Arguments]',
@@ -49402,7 +49446,7 @@ exports.create = function createBackend (name, path, options) {
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 
 const Key = __webpack_require__(16).Key
-const debug = __webpack_require__(115)
+const debug = __webpack_require__(116)
 const log = debug('repo:version')
 
 const versionKey = new Key('version')
@@ -49547,8 +49591,8 @@ module.exports = bytesToUuid;
 const pull = __webpack_require__(5)
 const setImmediate = __webpack_require__(8)
 
-const asyncFilter = __webpack_require__(116).asyncFilter
-const asyncSort = __webpack_require__(116).asyncSort
+const asyncFilter = __webpack_require__(117).asyncFilter
+const asyncSort = __webpack_require__(117).asyncSort
 const Key = __webpack_require__(176)
 
 class MemoryDatastore {
@@ -49679,7 +49723,7 @@ module.exports = MemoryDatastore
 
 
 const Key = __webpack_require__(16).Key
-const queue = __webpack_require__(118)
+const queue = __webpack_require__(119)
 const waterfall = __webpack_require__(6)
 const _get = __webpack_require__(178)
 const _set = __webpack_require__(356)
@@ -49802,7 +49846,7 @@ var _baseIndexOf = __webpack_require__(351);
 
 var _baseIndexOf2 = _interopRequireDefault(_baseIndexOf);
 
-var _isArray = __webpack_require__(108);
+var _isArray = __webpack_require__(109);
 
 var _isArray2 = _interopRequireDefault(_isArray);
 
@@ -49814,7 +49858,7 @@ var _onlyOnce = __webpack_require__(48);
 
 var _onlyOnce2 = _interopRequireDefault(_onlyOnce);
 
-var _setImmediate = __webpack_require__(107);
+var _setImmediate = __webpack_require__(108);
 
 var _setImmediate2 = _interopRequireDefault(_setImmediate);
 
@@ -53734,21 +53778,21 @@ module.exports = baseProperty;
 module.exports = {
   lock: 'memory',
   storageBackends: {
-    root: __webpack_require__(119),
-    blocks: __webpack_require__(119),
-    datastore: __webpack_require__(119)
+    root: __webpack_require__(120),
+    blocks: __webpack_require__(120),
+    datastore: __webpack_require__(120)
   },
   storageBackendOptions: {
     root: {
-      db: __webpack_require__(121),
+      db: __webpack_require__(122),
       extension: ''
     },
     blocks: {
       sharding: false,
-      db: __webpack_require__(121)
+      db: __webpack_require__(122)
     },
     datastore: {
-      db: __webpack_require__(121)
+      db: __webpack_require__(122)
     }
   }
 }
@@ -54620,7 +54664,7 @@ PassThrough.prototype._transform = function (chunk, encoding, cb) {
 /* 385 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(120);
+module.exports = __webpack_require__(121);
 
 
 /***/ }),
@@ -59642,7 +59686,7 @@ exports.encodingLength = function (v) {
 
 
 var varint = __webpack_require__(11)
-var defined = __webpack_require__(124).defined
+var defined = __webpack_require__(125).defined
 
 function compileDecode (m, resolve, enc) {
   var requiredFields = []
@@ -59879,7 +59923,7 @@ module.exports = compileDecode
 "use strict";
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 
-var defined = __webpack_require__(124).defined
+var defined = __webpack_require__(125).defined
 var varint = __webpack_require__(11)
 
 function compileEncode (m, resolve, enc, oneofs, encodingLength) {
@@ -60017,7 +60061,7 @@ module.exports = compileEncode
 "use strict";
 
 
-var defined = __webpack_require__(124).defined
+var defined = __webpack_require__(125).defined
 var varint = __webpack_require__(11)
 
 function compileEncodingLength (m, enc, oneofs) {
@@ -60270,7 +60314,7 @@ module.exports = rmLink
 
 const waterfall = __webpack_require__(6)
 
-const util = __webpack_require__(123)
+const util = __webpack_require__(124)
 
 exports = module.exports
 exports.multicodec = 'dag-pb'
@@ -60441,7 +60485,7 @@ exports.leveldb = {
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 
 const Decoder = __webpack_require__(206)
-const utils = __webpack_require__(125)
+const utils = __webpack_require__(126)
 
 /**
  * Output the diagnostic format from a stream of CBOR bytes.
@@ -62674,10 +62718,10 @@ var objectKeys = Object.keys || function (obj) {
 "use strict";
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 
-const url = __webpack_require__(126)
+const url = __webpack_require__(127)
 const Bignumber = __webpack_require__(84)
 
-const utils = __webpack_require__(125)
+const utils = __webpack_require__(126)
 const constants = __webpack_require__(85)
 const MT = constants.MT
 const NUMBYTES = constants.NUMBYTES
@@ -64533,7 +64577,7 @@ var createHash = __webpack_require__(66)
 var BN = __webpack_require__(14)
 var EC = __webpack_require__(22).ec
 
-var messages = __webpack_require__(128)
+var messages = __webpack_require__(129)
 
 var ec = new EC('secp256k1')
 var ecparams = ec.curve
@@ -67412,7 +67456,7 @@ Point.prototype.mixedAdd = Point.prototype.add;
 
 var curves = exports;
 
-var hash = __webpack_require__(129);
+var hash = __webpack_require__(130);
 var elliptic = __webpack_require__(22);
 
 var assert = elliptic.utils.assert;
@@ -69036,7 +69080,7 @@ EC.prototype.getKeyRecoveryParam = function(e, signature, Q, enc) {
 "use strict";
 
 
-var hash = __webpack_require__(129);
+var hash = __webpack_require__(130);
 var utils = __webpack_require__(221);
 var assert = __webpack_require__(38);
 
@@ -69424,7 +69468,7 @@ Signature.prototype.toDER = function toDER(enc) {
 "use strict";
 
 
-var hash = __webpack_require__(129);
+var hash = __webpack_require__(130);
 var elliptic = __webpack_require__(22);
 var utils = elliptic.utils;
 var assert = utils.assert;
@@ -69732,7 +69776,7 @@ module.exports = new Buffer('c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bf
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {const createKeccakHash = __webpack_require__(230)
-const secp256k1 = __webpack_require__(127)
+const secp256k1 = __webpack_require__(128)
 const assert = __webpack_require__(9)
 const rlp = __webpack_require__(45)
 const BN = __webpack_require__(14)
@@ -70991,7 +71035,7 @@ function mapFromEthObj (ethBlockList, options, callback) {
 /* eslint max-nested-callbacks: ["error", 5] */
 
 const ethAccountSnapshotResolver = __webpack_require__(213)
-const createTrieResolver = __webpack_require__(130)
+const createTrieResolver = __webpack_require__(131)
 
 const ethStateTrieResolver = createTrieResolver('eth-state-trie', ethAccountSnapshotResolver)
 
@@ -71299,7 +71343,7 @@ function toIpfsBlock (multicodec, value, callback) {
 
 /* eslint max-nested-callbacks: ["error", 5] */
 
-const createTrieResolver = __webpack_require__(130)
+const createTrieResolver = __webpack_require__(131)
 
 const ethStorageTrieResolver = createTrieResolver('eth-storage-trie')
 
@@ -71643,7 +71687,7 @@ module.exports = Transaction;
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {const createKeccakHash = __webpack_require__(230)
-const secp256k1 = __webpack_require__(127)
+const secp256k1 = __webpack_require__(128)
 const assert = __webpack_require__(9)
 const rlp = __webpack_require__(45)
 const BN = __webpack_require__(14)
@@ -72326,7 +72370,7 @@ module.exports = {"genesisGasLimit":{"v":5000,"d":"Gas limit of the Genesis bloc
 /* eslint max-nested-callbacks: ["error", 5] */
 
 const ethTxResolver = __webpack_require__(233)
-const createTrieResolver = __webpack_require__(130)
+const createTrieResolver = __webpack_require__(131)
 
 const ethTxTrieResolver = createTrieResolver('eth-tx-trie', ethTxResolver)
 
@@ -73840,7 +73884,7 @@ exports.createDecipheriv = createDecipheriv
 
 
 const protobuf = __webpack_require__(32)
-const keysPBM = protobuf(__webpack_require__(133))
+const keysPBM = protobuf(__webpack_require__(134))
 
 exports = module.exports
 
@@ -73961,7 +74005,7 @@ const multihashing = __webpack_require__(17)
 const protobuf = __webpack_require__(32)
 
 const crypto = __webpack_require__(242)
-const pbm = protobuf(__webpack_require__(133))
+const pbm = protobuf(__webpack_require__(134))
 
 class RsaPublicKey {
   constructor (key) {
@@ -74282,7 +74326,7 @@ Entity.prototype.encode = function encode(data, enc, /* internal */ reporter) {
 /* 526 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var indexOf = __webpack_require__(134);
+var indexOf = __webpack_require__(135);
 
 var Object_keys = function (obj) {
     if (Object.keys) return Object.keys(obj)
@@ -75350,7 +75394,7 @@ const multihashing = __webpack_require__(17)
 const protobuf = __webpack_require__(32)
 
 const crypto = __webpack_require__(535)
-const pbm = protobuf(__webpack_require__(133))
+const pbm = protobuf(__webpack_require__(134))
 
 class Ed25519PublicKey {
   constructor (key) {
@@ -78192,7 +78236,7 @@ module.exports = __webpack_require__(215)(__webpack_require__(541))
 var Buffer = __webpack_require__(2).Buffer
 var createHash = __webpack_require__(66)
 var HmacDRBG = __webpack_require__(542)
-var messages = __webpack_require__(128)
+var messages = __webpack_require__(129)
 var BN = __webpack_require__(90)
 var ECPoint = __webpack_require__(248)
 var g = __webpack_require__(547)
@@ -79465,8 +79509,8 @@ module.exports = (curve, callback) => {
 "use strict";
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 
-const webcrypto = __webpack_require__(132)()
-const nodeify = __webpack_require__(131)
+const webcrypto = __webpack_require__(133)()
+const nodeify = __webpack_require__(132)
 const BN = __webpack_require__(54).bignum
 
 const util = __webpack_require__(247)
@@ -79600,10 +79644,10 @@ function unmarshalPrivateKey (curve, key) {
 "use strict";
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 
-const map = __webpack_require__(135)
+const map = __webpack_require__(136)
 const filter = __webpack_require__(552)
 const convert = __webpack_require__(553)
-const protocols = __webpack_require__(136)
+const protocols = __webpack_require__(137)
 const varint = __webpack_require__(11)
 
 // export codec
@@ -82193,7 +82237,7 @@ module.exports = filter;
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 
 const ip = __webpack_require__(554)
-const protocols = __webpack_require__(136)
+const protocols = __webpack_require__(137)
 const bs58 = __webpack_require__(72)
 const varint = __webpack_require__(11)
 
@@ -82314,7 +82358,7 @@ function buf2mh (buf) {
 
 var ip = exports;
 var Buffer = __webpack_require__(0).Buffer;
-var os = __webpack_require__(117);
+var os = __webpack_require__(118);
 
 ip.toBuffer = function(ip, buff, offset) {
   offset = ~~offset;
@@ -86188,7 +86232,7 @@ const setImmediate = __webpack_require__(8)
 
 const Message = __webpack_require__(92)
 const Wantlist = __webpack_require__(93)
-const CONSTANTS = __webpack_require__(137)
+const CONSTANTS = __webpack_require__(138)
 const MsgQueue = __webpack_require__(571)
 const logger = __webpack_require__(56).logger
 
@@ -90862,7 +90906,7 @@ const each = __webpack_require__(15)
 const setImmediate = __webpack_require__(8)
 
 const Message = __webpack_require__(92)
-const CONSTANTS = __webpack_require__(137)
+const CONSTANTS = __webpack_require__(138)
 const logger = __webpack_require__(56).logger
 
 const BITSWAP100 = '/ipfs/bitswap/1.0.0'
@@ -91338,7 +91382,7 @@ const map = __webpack_require__(65)
 const debounce = __webpack_require__(254)
 const uniqWith = __webpack_require__(578)
 const find = __webpack_require__(579)
-const values = __webpack_require__(138)
+const values = __webpack_require__(139)
 const groupBy = __webpack_require__(580)
 const pullAllWith = __webpack_require__(581)
 
@@ -97764,7 +97808,7 @@ module.exports = Ledger
 
 const EventEmitter = __webpack_require__(12).EventEmitter
 
-const CONSTANTS = __webpack_require__(137)
+const CONSTANTS = __webpack_require__(138)
 const logger = __webpack_require__(56).logger
 
 const unwantEvent = (c) => `unwant:${c}`
@@ -97885,7 +97929,7 @@ module.exports = Notifications
 
 const EventEmitter = __webpack_require__(12)
 const TimeCache = __webpack_require__(585)
-const values = __webpack_require__(138)
+const values = __webpack_require__(139)
 const pull = __webpack_require__(5)
 const lp = __webpack_require__(25)
 const assert = __webpack_require__(9)
@@ -100435,7 +100479,7 @@ module.exports = function (url, location) {
 
 
 //normalize a ws url.
-var URL = __webpack_require__(126)
+var URL = __webpack_require__(127)
 module.exports = function (url, location, protocolMap, defaultProtocol) {
   protocolMap = protocolMap ||{}
   /*
@@ -100652,7 +100696,7 @@ module.exports = maToUrl
 const Connection = __webpack_require__(30).Connection
 const includes = __webpack_require__(258)
 const multiaddr = __webpack_require__(24)
-const os = __webpack_require__(117)
+const os = __webpack_require__(118)
 
 function noop () {}
 
@@ -100745,7 +100789,7 @@ const SimplePeer = __webpack_require__(647)
 const PeerId = __webpack_require__(23)
 const PeerInfo = __webpack_require__(39)
 const Connection = __webpack_require__(30).Connection
-const toPull = __webpack_require__(142)
+const toPull = __webpack_require__(143)
 const once = __webpack_require__(55)
 const setImmediate = __webpack_require__(8)
 const webrtcSupport = __webpack_require__(652)
@@ -100976,7 +101020,7 @@ module.exports = WebRTCStar
  */
 
 var url = __webpack_require__(624);
-var parser = __webpack_require__(139);
+var parser = __webpack_require__(140);
 var Manager = __webpack_require__(262);
 var debug = __webpack_require__(95)('socket.io-client');
 
@@ -101953,7 +101997,7 @@ module.exports.parser = __webpack_require__(58);
 var transports = __webpack_require__(263);
 var Emitter = __webpack_require__(57);
 var debug = __webpack_require__(98)('engine.io-client:socket');
-var index = __webpack_require__(134);
+var index = __webpack_require__(135);
 var parser = __webpack_require__(58);
 var parseuri = __webpack_require__(259);
 var parseqs = __webpack_require__(96);
@@ -102089,7 +102133,7 @@ Socket.protocol = parser.protocol; // this is an int
  */
 
 Socket.Socket = Socket;
-Socket.Transport = __webpack_require__(141);
+Socket.Transport = __webpack_require__(142);
 Socket.transports = __webpack_require__(263);
 Socket.parser = __webpack_require__(58);
 
@@ -102723,7 +102767,7 @@ try {
  * Module requirements.
  */
 
-var XMLHttpRequest = __webpack_require__(140);
+var XMLHttpRequest = __webpack_require__(141);
 var Polling = __webpack_require__(264);
 var Emitter = __webpack_require__(57);
 var inherit = __webpack_require__(97);
@@ -104120,7 +104164,7 @@ JSONPPolling.prototype.doWrite = function (data, fn) {
  * Module dependencies.
  */
 
-var Transport = __webpack_require__(141);
+var Transport = __webpack_require__(142);
 var parser = __webpack_require__(58);
 var parseqs = __webpack_require__(96);
 var inherit = __webpack_require__(97);
@@ -107222,7 +107266,7 @@ module.exports = Channel
 
 const EventEmitter = __webpack_require__(12).EventEmitter
 const Connection = __webpack_require__(30).Connection
-const toPull = __webpack_require__(142)
+const toPull = __webpack_require__(143)
 const pull = __webpack_require__(5)
 const pullCatch = __webpack_require__(665)
 const setImmediate = __webpack_require__(8)
@@ -107502,8 +107546,8 @@ module.exports = function handshake (state) {
 const debug = __webpack_require__(10)
 const waterfall = __webpack_require__(6)
 
-const support = __webpack_require__(143)
-const crypto = __webpack_require__(144)
+const support = __webpack_require__(144)
+const crypto = __webpack_require__(145)
 
 const log = debug('libp2p:secio')
 log.error = debug('libp2p:secio:error')
@@ -107565,8 +107609,8 @@ message Exchange {
 const debug = __webpack_require__(10)
 const waterfall = __webpack_require__(6)
 
-const support = __webpack_require__(143)
-const crypto = __webpack_require__(144)
+const support = __webpack_require__(144)
+const crypto = __webpack_require__(145)
 
 const log = debug('libp2p:secio')
 log.error = debug('libp2p:secio:error')
@@ -107614,7 +107658,7 @@ const log = debug('libp2p:secio')
 log.error = debug('libp2p:secio:error')
 
 const etm = __webpack_require__(674)
-const crypto = __webpack_require__(144)
+const crypto = __webpack_require__(145)
 
 // step 3. Finish
 // -- send expected message to verify encryption works (send local nonce)
@@ -108245,7 +108289,7 @@ exports.unmount = handler.unmount
 
 const pull = __webpack_require__(5)
 const handshake = __webpack_require__(59)
-const constants = __webpack_require__(146)
+const constants = __webpack_require__(147)
 const PROTOCOL = constants.PROTOCOL
 const PING_LENGTH = constants.PING_LENGTH
 
@@ -108303,7 +108347,7 @@ exports.unmount = unmount
 const EventEmitter = __webpack_require__(12).EventEmitter
 const pull = __webpack_require__(5)
 const handshake = __webpack_require__(59)
-const constants = __webpack_require__(146)
+const constants = __webpack_require__(147)
 const util = __webpack_require__(681)
 const rnd = util.rnd
 const debug = __webpack_require__(10)
@@ -108387,7 +108431,7 @@ module.exports = Ping
 
 
 const crypto = __webpack_require__(69)
-const constants = __webpack_require__(146)
+const constants = __webpack_require__(147)
 
 exports = module.exports
 
@@ -111096,7 +111140,7 @@ module.exports = LimitDialer
 const Connection = __webpack_require__(30).Connection
 const pull = __webpack_require__(5)
 const timeout = __webpack_require__(697)
-const queue = __webpack_require__(118)
+const queue = __webpack_require__(119)
 const debug = __webpack_require__(10)
 
 const log = debug('libp2p:swarm:dialer:queue')
@@ -111299,7 +111343,7 @@ module.exports = exports['default'];
 
 
 const identify = __webpack_require__(699)
-const multistream = __webpack_require__(147)
+const multistream = __webpack_require__(148)
 const waterfall = __webpack_require__(6)
 const debug = __webpack_require__(10)
 const log = debug('libp2p:swarm:connection')
@@ -111537,7 +111581,7 @@ function hasObservedAddr (input) {
 "use strict";
 
 
-const multistream = __webpack_require__(147)
+const multistream = __webpack_require__(148)
 const Connection = __webpack_require__(30).Connection
 const setImmediate = __webpack_require__(8)
 const getPeerInfo = __webpack_require__(280)
@@ -111749,9 +111793,9 @@ module.exports = dial
 
 const multiaddr = __webpack_require__(24)
 const promisify = __webpack_require__(18)
-const values = __webpack_require__(138)
+const values = __webpack_require__(139)
 
-const OFFLINE_ERROR = __webpack_require__(148).OFFLINE_ERROR
+const OFFLINE_ERROR = __webpack_require__(149).OFFLINE_ERROR
 
 module.exports = function swarm (self) {
   return {
@@ -111869,7 +111913,7 @@ const pull = __webpack_require__(5)
 const sort = __webpack_require__(738)
 const pushable = __webpack_require__(29)
 const toStream = __webpack_require__(272)
-const toPull = __webpack_require__(142)
+const toPull = __webpack_require__(143)
 const waterfall = __webpack_require__(6)
 const isStream = __webpack_require__(739)
 const Duplex = __webpack_require__(37).Duplex
@@ -112693,7 +112737,7 @@ module.exports = function (file, ipldResolver, options) {
 const pull = __webpack_require__(5)
 const pushable = __webpack_require__(29)
 const pullPair = __webpack_require__(99)
-const batch = __webpack_require__(149)
+const batch = __webpack_require__(150)
 
 module.exports = function (reduce, options) {
   const pair = pullPair()
@@ -112756,7 +112800,7 @@ module.exports = function (reduce, _options) {
 const pull = __webpack_require__(5)
 const pushable = __webpack_require__(29)
 const pullPair = __webpack_require__(99)
-const batch = __webpack_require__(149)
+const batch = __webpack_require__(150)
 
 module.exports = function balancedReduceToRoot (reduce, options) {
   const pair = pullPair()
@@ -112839,7 +112883,7 @@ module.exports = function (reduce, _options) {
 
 const pull = __webpack_require__(5)
 const pushable = __webpack_require__(29)
-const batch = __webpack_require__(149)
+const batch = __webpack_require__(150)
 const pullPair = __webpack_require__(99)
 const through = __webpack_require__(103)
 const pullWrite = __webpack_require__(102)
@@ -112992,12 +113036,12 @@ module.exports = function trickleReduceToRoot (reduce, options) {
 const eachSeries = __webpack_require__(94)
 const eachOfSeries = __webpack_require__(172)
 const waterfall = __webpack_require__(6)
-const createQueue = __webpack_require__(118)
+const createQueue = __webpack_require__(119)
 const writable = __webpack_require__(102)
 const pushable = __webpack_require__(29)
 const DirFlat = __webpack_require__(720)
 const flatToShard = __webpack_require__(721)
-const Dir = __webpack_require__(150)
+const Dir = __webpack_require__(151)
 
 module.exports = createTreeBuilder
 
@@ -113221,7 +113265,7 @@ const dagPB = __webpack_require__(50)
 const UnixFS = __webpack_require__(46)
 const DAGLink = dagPB.DAGLink
 const DAGNode = dagPB.DAGNode
-const Dir = __webpack_require__(150)
+const Dir = __webpack_require__(151)
 
 class DirFlat extends Dir {
   constructor (props, _options) {
@@ -113407,7 +113451,7 @@ const UnixFS = __webpack_require__(46)
 const DAGLink = dagPB.DAGLink
 const DAGNode = dagPB.DAGNode
 const multihashing = __webpack_require__(17)
-const Dir = __webpack_require__(150)
+const Dir = __webpack_require__(151)
 
 const Bucket = __webpack_require__(723)
 
@@ -114577,9 +114621,9 @@ function typeOf (node) {
 
 const path = __webpack_require__(41)
 const pull = __webpack_require__(5)
-const paramap = __webpack_require__(151)
+const paramap = __webpack_require__(152)
 const CID = __webpack_require__(7)
-const cat = __webpack_require__(145)
+const cat = __webpack_require__(146)
 
 // Logic to export a unixfs directory.
 module.exports = dirExporter
@@ -114662,9 +114706,9 @@ module.exports = function (fn) {
 
 const path = __webpack_require__(41)
 const pull = __webpack_require__(5)
-const paramap = __webpack_require__(151)
+const paramap = __webpack_require__(152)
 const CID = __webpack_require__(7)
-const cat = __webpack_require__(145)
+const cat = __webpack_require__(146)
 const cleanHash = __webpack_require__(735)
 
 // Logic to export a unixfs directory.
@@ -114762,7 +114806,7 @@ const traverse = __webpack_require__(201)
 const UnixFS = __webpack_require__(46)
 const CID = __webpack_require__(7)
 const pull = __webpack_require__(5)
-const paramap = __webpack_require__(151)
+const paramap = __webpack_require__(152)
 
 // Logic to export a single (possibly chunked) unixfs file.
 module.exports = (node, name, pathRest, ipldResolver) => {
@@ -114906,7 +114950,7 @@ isStream.transform = function (stream) {
 "use strict";
 
 
-const OFFLINE_ERROR = __webpack_require__(148).OFFLINE_ERROR
+const OFFLINE_ERROR = __webpack_require__(149).OFFLINE_ERROR
 
 function formatWantlist (list) {
   return Array.from(list).map((e) => e[1])
@@ -114954,7 +114998,7 @@ module.exports = function bitswap (self) {
 const promisify = __webpack_require__(18)
 const setImmediate = __webpack_require__(8)
 
-const OFFLINE_ERROR = __webpack_require__(148).OFFLINE_ERROR
+const OFFLINE_ERROR = __webpack_require__(149).OFFLINE_ERROR
 
 module.exports = function pubsub (self) {
   return {
@@ -115637,6 +115681,133 @@ var combine = exports.combine = function (fsm1, fsm2, start1, start2) {
   expand(start1, start2)
   return combined
 }
+
+
+
+/***/ }),
+/* 749 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* global FileReader, ArrayBuffer */
+var defined = __webpack_require__(750)
+var pull = __webpack_require__(107)
+var Abortable = __webpack_require__(751)
+var Buffer = __webpack_require__(0).Buffer
+
+module.exports = function (file, options) {
+  options = defined(options, {})
+  var offset = defined(options.offset, 0)
+  var chunkSize = defined(options.chunkSize, 1024 * 1024) // default 1MB chunk has tolerable perf on large files
+  var fileReader = new FileReader(file)
+
+  var read = function (abort, cb) {
+    if (abort) return cb(abort)
+    if (offset >= file.size) return cb(true)
+
+    fileReader.addEventListener('load', function handleLoad (ev) {
+      var data = ev.target.result
+      if (data instanceof ArrayBuffer) data = Buffer(data)
+
+      fileReader.removeEventListener('load', handleLoad)
+      cb(null, data)
+    })
+
+    var end = offset + chunkSize
+    var slice = file.slice(offset, end)
+    fileReader.readAsArrayBuffer(slice)
+    offset = end
+  }
+
+  var abortable = Abortable()
+  fileReader.addEventListener('abort', handleError)
+
+  return pull(read, abortable)
+
+  function handleError (err) {
+    abortable.abort(err)
+  }
+}
+
+
+
+/***/ }),
+/* 750 */
+/***/ (function(module, exports) {
+
+module.exports = function () {
+    for (var i = 0; i < arguments.length; i++) {
+        if (arguments[i] !== undefined) return arguments[i];
+    }
+};
+
+
+/***/ }),
+/* 751 */
+/***/ (function(module, exports) {
+
+function abortable(onEnd) {
+  var aborted = false, reading = false, ended = false, _cb, _read
+
+  function doEnd () {
+    if(!onEnd) return
+    if(aborted && aborted !== true) return onEnd(aborted)
+    if(ended && ended !== true) return onEnd(ended)
+    return onEnd(null)
+  }
+
+  function terminate (err) {
+    doEnd()
+    var cb = _cb; _cb = null
+    if(cb) cb(aborted || ended)
+  }
+
+  function cancel () {
+    ended = ended || true
+    terminate(aborted || ended)
+    if(_read)
+      _read(aborted, function (err) {
+        if(_cb) _cb(err||aborted)
+      })
+  }
+
+  function reader (read) {
+    _read = read
+    return function (abort, cb) {
+      _cb = cb
+      if(abort)   aborted = abort
+      if(ended)   return cb(ended)
+      if(aborted) return
+      reading = true
+      read(abort, function (end, data) {
+        reading = false
+        if(aborted) return !abort && read(aborted, function () {})
+        if(!_cb) return
+        var cb = _cb
+        _cb = null
+        if(end) {
+          ended = aborted || end
+          doEnd()
+          cb(aborted || end)
+        }
+        else {
+          cb(aborted || end, data)
+        }
+      })
+    }
+  }
+
+  reader.abort = function (err) {
+    if(ended) return
+    aborted = err || true
+    cancel()
+  }
+
+  return reader
+}
+
+module.exports = abortable
+
+
 
 
 
