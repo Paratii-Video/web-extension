@@ -34,10 +34,10 @@ function detectPlayers (selector) {
 }
 
 // disabled bc i'm working on upload for now
-//detectPlayers('.paratii-player')
+detectPlayers('.paratii-player')
 
 // Testing msg passing between contentscript => background.js
-/*chrome.runtime.sendMessage({
+/* chrome.runtime.sendMessage({
   payload: {
     action: 'paratii.start',
     uri: 'test URL'
@@ -53,7 +53,7 @@ function detectPlayers (selector) {
   //     verbatim: true
   //   }
   // }, '*')
-})*/
+}) */
 
 window.addEventListener('message', (event) => {
     /* if (event.source != window)
