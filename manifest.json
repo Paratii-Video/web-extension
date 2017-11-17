@@ -28,7 +28,7 @@
         "https://*/*"
       ],
       "js": [
-        "src/js/contentscript.js"
+        "build/js/contentscript.bundled.js"
       ],
       "run_at": "document_start",
       "all_frames": true

@@ -33,7 +33,7 @@ bower_components
 build/Release
 
 # paratii
-build/
+build/*
 
 # Dependency directories
 node_modules/

@@ -16,7 +16,8 @@ const DIR = {
     js: ROOT + '/js/**/*.js',
     entry: {
       popup: './src/js/popup.js',
-      background: './src/js/background.js'
+      background: './src/js/background.js',
+      contentscript: './src/js/contentscript.js'
     },
     dest: './build/js'
   }
@@ -63,7 +64,7 @@ gulp.task('webpack', () => {
             // plugins: ['transform-runtime'],
             presets: ['es2015']
           }
-        },
+        }
         // { test: /\.hbs$/, loader: "handlebars-loader" }
       ]
     },
