@@ -33,10 +33,11 @@ function detectPlayers (selector) {
   }
 }
 
+// disabled bc i'm working on upload for now
 detectPlayers('.paratii-player')
 
 // Testing msg passing between contentscript => background.js
-chrome.runtime.sendMessage({
+/* chrome.runtime.sendMessage({
   payload: {
     action: 'paratii.start',
     uri: 'test URL'
@@ -52,7 +53,7 @@ chrome.runtime.sendMessage({
   //     verbatim: true
   //   }
   // }, '*')
-})
+}) */
 
 window.addEventListener('message', (event) => {
     /* if (event.source != window)
@@ -67,6 +68,28 @@ window.addEventListener('message', (event) => {
     console.log(event.data)
 
     let payload = event.data.payload
+    if (payload.action === 'upload') {
+      console.log('Supposed to send data to extension for uploading')
+      let fileForUploading = payload.file
+      console.log(fileForUploading)
+      chrome.runtime.sendMessage({
+        payload: {
+          action: 'paratii.upload',
+          file: fileForUploading
+        }
+      }, (response) => {
+        console.log('Received message from extension...')
+        console.log(response)
+        window.postMessage({
+          type: 'PARATII_RESP',
+          payload: {
+            action: 'paratii.replyfromextension',
+            response: response,
+            verbatim: true
+          }
+        }, '*')
+      })
+    }
     if (payload.action === 'start') {
       let videoURI = payload.uri
       chrome.runtime.sendMessage({

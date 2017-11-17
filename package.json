@@ -40,6 +40,8 @@
     "bootstrap": "^3.3.7",
     "ipfs": "github:ya7ya/js-ipfs#paratii/master",
     "node-sass": "^4.5.3",
-    "popper.js": "^1.12.6"
+    "popper.js": "^1.12.6",
+    "pull-filereader": "^1.0.1",
+    "pull-stream": "^3.6.1"
   }
 }
