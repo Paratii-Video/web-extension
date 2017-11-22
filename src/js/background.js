@@ -5,7 +5,9 @@ console.log('[PARATII] background.js')
 
 const IPFS = require('ipfs')
 const pull = require('pull-stream')
-const pullFileReader = require('pull-filereader')
+// const pullFileReader = require('pull-filereader')
+const toStream = require('buffer-to-stream')
+const toPullStream = require('stream-to-pull-stream')
 
 const node = new IPFS({
   bitswap: {
@@ -32,6 +34,91 @@ const node = new IPFS({
 node.on('ready', () => {
   console.log('[PARATII] IPFS node Ready')
 })
+
+// -----------------------------------------------------------------------------
+// [Long Lived connection]
+chrome.runtime.onConnect.addListener((port) => {
+  console.log('Connected to ', port)
+  port.onMessage.addListener((msg) => {
+    // try {
+    //   msg.payload = JSON.parse(msg.payload)
+    // } catch (e) {
+    //   console.error('couldn\'t parse msg.payload')
+    // }
+
+    console.log('message recieved', msg.payload)
+    port.postMessage('Hi Popup.js')
+    pull(
+      pull.values(msg.payload),
+      pull.through((file) => {
+        console.log('Adding ', file)
+      }),
+      pull.asyncMap((file, cb) => pull(
+        pull.values([{
+          path: 'test_file',
+          content: toPullStream(toStream(Buffer.from(file)))
+          /* content: pull(
+            pullFileReader(file),
+            pull.through((chunk) => updateProgress(chunk.length))
+          ) */
+        }]),
+        node.files.createAddPullStream({chunkerOptions: {maxChunkSize: 64048}}), // default size 262144
+        pull.collect((err, res) => {
+          if (err) {
+            return cb(err)
+          }
+          const file = res[0]
+          console.log('🍾 yay something happened')
+          console.log(file)
+        })
+      )),
+     pull.collect((err, files) => {
+       if (err) {
+         throw err
+       }
+       if (files && files.length) {
+         console.log('apparently all done')
+         console.log(files)
+       }
+     })
+   )
+    // Working but crashy
+  //   pull(
+  //     pull.values(msg.payload),
+  //     pull.through((file) => {
+  //       console.log('Adding ', file)
+  //     }),
+  //     pull.asyncMap((file, cb) => pull(
+  //       pull.values([{
+  //         path: 'test_file',
+  //         content: toPullStream(toStream(Buffer.from(file)))
+  //         /* content: pull(
+  //           pullFileReader(file),
+  //           pull.through((chunk) => updateProgress(chunk.length))
+  //         ) */
+  //       }]),
+  //       node.files.createAddPullStream({chunkerOptions: {maxChunkSize: 64048}}), // default size 262144
+  //       pull.collect((err, res) => {
+  //         if (err) {
+  //           return cb(err)
+  //         }
+  //         const file = res[0]
+  //         console.log('🍾 yay something happened')
+  //         console.log(file)
+  //       }))),
+  //    pull.collect((err, files) => {
+  //      if (err) {
+  //        throw err
+  //      }
+  //      if (files && files.length) {
+  //        console.log('apparently all done')
+  //        console.log(files)
+  //      }
+  //    })
+  //  )
+  })
+})
+// -----------------------------------------------------------------------------
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   console.log('Got Msg from contentscript: \n request:', request, '\nsender:', sender)
@@ -73,16 +160,8 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         pull.through((file) => {
           console.log('Adding ', file)
         }),
+        // node.files.createAddPullStream({chunkerOptions: {maxChunkSize: 64048}}), // default size 262144
         pull.asyncMap((file, cb) => pull(
-          pull.values([{
-            path: file.name,
-            content: pullFileReader(file)
-            /* content: pull(
-              pullFileReader(file),
-              pull.through((chunk) => updateProgress(chunk.length))
-            ) */
-          }]),
-          node.files.createAddPullStream({chunkerOptions: {maxChunkSize: 64048}}), // default size 262144
           pull.collect((err, res) => {
             if (err) {
               return cb(err)
@@ -90,9 +169,11 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
             const file = res[0]
             console.log('🍾 yay something happened')
             console.log(file)
+            cb(null, file)
           }))),
        pull.collect((err, files) => {
          if (err) {
+           console.error('gotcha ', err)
            throw err
          }
          if (files && files.length) {
@@ -127,3 +208,38 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     }
   }
 })
+
+//
+// pull(
+//   pull.values(msg.payload),
+//   pull.through((file) => {
+//     console.log('Adding ', file)
+//   }),
+//   pull.asyncMap((file, cb) => pull(
+//     pull.values([{
+//       path: file.name,
+//       content: pullFileReader(file)
+//       /* content: pull(
+//         pullFileReader(file),
+//         pull.through((chunk) => updateProgress(chunk.length))
+//       ) */
+//     }]),
+//     node.files.createAddPullStream({chunkerOptions: {maxChunkSize: 64048}}), // default size 262144
+//     pull.collect((err, res) => {
+//       if (err) {
+//         return cb(err)
+//       }
+//       const file = res[0]
+//       console.log('🍾 yay something happened')
+//       console.log(file)
+//     }))),
+//  pull.collect((err, files) => {
+//    if (err) {
+//      throw err
+//    }
+//    if (files && files.length) {
+//      console.log('apparently all done')
+//      console.log(files)
+//    }
+//  })
+// )
