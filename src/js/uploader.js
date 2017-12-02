@@ -98,6 +98,7 @@ class Uploader extends EventEmitter {
   //      }
   //    })
   //  )
+    let name = null
     pull(
       pull.values(this.files),
       pull.through((file) => {
@@ -115,22 +116,26 @@ class Uploader extends EventEmitter {
         //   ) */
         // }]),
         pull.through((chunk) => {
-          console.log('loading ', chunk)
+          console.log('loading ', file, chunk)
+          this.sendChunkToBackground(file.name, chunk)
+          name = file.name
         }),
         pull.collect((err, res) => {
           if (err) {
             return cb(err)
           }
-          const file = res[0]
-          console.log('Adding %s finished', file)
+          // const file = res[0]
+          console.log('Adding finished', res)
+
           const contents = Buffer.concat(res)
           cb(null, contents)
         })
       )),
       pull.collect((err, chunks) => {
         if (err) throw err
-        console.log('Adding %s finished', chunks)
+        console.log('Adding finished', chunks)
         // this.processInBackground(chunks)
+        this.sendEnd(name)
       })
     )
   }
@@ -140,6 +145,23 @@ class Uploader extends EventEmitter {
     this.port.postMessage({
       command: 'upload',
       payload: files
+    })
+  }
+
+  sendChunkToBackground (name, chunk) {
+    console.log('sending chunk: ', name)
+    this.port.postMessage({
+      command: 'upload-chunk',
+      name: name,
+      data: chunk
+    })
+  }
+
+  sendEnd (name) {
+    console.log('sending END', name)
+    this.port.postMessage({
+      command: 'upload-end',
+      name: name
     })
   }
 

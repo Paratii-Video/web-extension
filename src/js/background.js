@@ -6,8 +6,9 @@ console.log('[PARATII] background.js')
 const IPFS = require('ipfs')
 const pull = require('pull-stream')
 // const pullFileReader = require('pull-filereader')
-const toStream = require('buffer-to-stream')
-const toPullStream = require('stream-to-pull-stream')
+// const toStream = require('buffer-to-stream')
+// const toPullStream = require('stream-to-pull-stream')
+const MultistreamUploader = require('./multistreamUpload.js')
 
 const node = new IPFS({
   bitswap: {
@@ -31,6 +32,10 @@ const node = new IPFS({
   }
 })
 
+const uploader = new MultistreamUploader({
+  node: node
+})
+
 node.on('ready', () => {
   console.log('[PARATII] IPFS node Ready')
 })
@@ -48,40 +53,51 @@ chrome.runtime.onConnect.addListener((port) => {
 
     console.log('message recieved', msg.payload)
     port.postMessage('Hi Popup.js')
-    pull(
-      pull.values(msg.payload),
-      pull.through((file) => {
-        console.log('Adding ', file)
-      }),
-      pull.asyncMap((file, cb) => pull(
-        pull.values([{
-          path: 'test_file',
-          content: toPullStream(toStream(Buffer.from(file)))
-          /* content: pull(
-            pullFileReader(file),
-            pull.through((chunk) => updateProgress(chunk.length))
-          ) */
-        }]),
-        node.files.createAddPullStream({chunkerOptions: {maxChunkSize: 64048}}), // default size 262144
-        pull.collect((err, res) => {
-          if (err) {
-            return cb(err)
-          }
-          const file = res[0]
-          console.log('🍾 yay something happened')
-          console.log(file)
-        })
-      )),
-     pull.collect((err, files) => {
-       if (err) {
-         throw err
-       }
-       if (files && files.length) {
-         console.log('apparently all done')
-         console.log(files)
-       }
-     })
-   )
+
+    if (msg.command === 'upload-chunk') {
+      // upload that shit.
+      console.log('upload-chunk: ', msg)
+      uploader.createOrWrite(msg.name, msg.data)
+    } else if (msg.command === 'upload-end') {
+      console.log('upload-end: ', msg)
+      uploader.end(msg.name)
+    }
+
+  //   pull(
+  //     pull.values(msg.payload),
+  //     pull.through((file) => {
+  //       console.log('Adding ', file)
+  //     }),
+  //     pull.asyncMap((file, cb) => pull(
+  //       pull.values([{
+  //         path: 'test_file',
+  //         content: toPullStream(toStream(Buffer.from(file)))
+  //         /* content: pull(
+  //           pullFileReader(file),
+  //           pull.through((chunk) => updateProgress(chunk.length))
+  //         ) */
+  //       }]),
+  //       node.files.createAddPullStream({chunkerOptions: {maxChunkSize: 64048}}), // default size 262144
+  //       pull.collect((err, res) => {
+  //         if (err) {
+  //           return cb(err)
+  //         }
+  //         const file = res[0]
+  //         console.log('🍾 yay something happened')
+  //         console.log(file)
+  //       })
+  //     )),
+  //    pull.collect((err, files) => {
+  //      if (err) {
+  //        throw err
+  //      }
+  //      if (files && files.length) {
+  //        console.log('apparently all done')
+  //        console.log(files)
+  //      }
+  //    })
+  //  )
+  //  ==========================================================
     // Working but crashy
   //   pull(
   //     pull.values(msg.payload),
